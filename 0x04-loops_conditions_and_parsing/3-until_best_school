@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-#Best School 10 times loop until.
+# Best School 10 times loop until.
+# You must use the until
 
 COUNTER=10
+
 until [ $COUNTER -lt 1 ]
 do
     echo "Best School"

@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # Best School 10 times loop while SHEL.
+# You must use the while
 
 COUNTER=0
+
 while [ $COUNTER -lt 10 ]
 do
     echo "Best School"
