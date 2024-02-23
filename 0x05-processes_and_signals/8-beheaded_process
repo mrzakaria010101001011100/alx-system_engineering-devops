@@ -2,5 +2,5 @@
 # This script kills 4-to_infinity_and_beyond process
 # Write a Bash script that kills the process 7-highlander.
 
-pkill -f "4-to_infinity_and_beyond"
+pkill -f "7-highlander"
 
