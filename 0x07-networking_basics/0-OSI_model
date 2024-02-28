@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# OSI model Open system interconnection model in lowest level 1 to highest level 7.
+layer physical
+layer data link
+layer network
+layer transport
+layer session
+layer presentation
+layer application
+
