@@ -1,24 +1,18 @@
 #!/usr/bin/python3
-import requests
+#!/usr/bin/python3
+"""Module for task 0"""
+
 
 def number_of_subscribers(subreddit):
-    # Define the URL for the subreddit API endpoint
-    url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    # Set a custom User-Agent to avoid rate limiting
-    headers = {'User-Agent': 'my-app/0.0.1'}
-    
-    try:
-        # Send the GET request to the Reddit API
-        response = requests.get(url, headers=headers, allow_redirects=False)
-        # Check if the response status code is 200 (OK)
-        if response.status_code == 200:
-            # Parse the JSON response
-            data = response.json()
-            # Return the number of subscribers
-            return data['data']['subscribers']
-        else:
-            # Return 0 if the subreddit is invalid or other status codes
-            return 0
-    except Exception as e:
-        # Return 0 in case of any exceptions
+    """Queries the Reddit API and returns the number of subscribers
+    to the subreddit"""
+    import requests
+
+    sub_info = requests.get("https://www.reddit.com/r/{}/about.json"
+                            .format(subreddit),
+                            headers={"User-Agent": "My-User-Agent"},
+                            allow_redirects=False)
+    if sub_info.status_code >= 300:
         return 0
+
+    return sub_info.json().get("data").get("subscribers")
